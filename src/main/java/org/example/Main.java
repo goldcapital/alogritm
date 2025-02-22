@@ -34,10 +34,62 @@ public class Main {
 
                     isPalindrome(scanner);
                     break;
+                case 6:
+                    transformNumber(scanner);
+                    break;
+                case 7:
+                    findCentury(scanner);
+                    break;
+                case 8:
+                    convertSeconds(scanner);
+                    break;
+                case 9:
+                    calculateCurrencyExchange(scanner);
+                    break;
                 case 0:
                     selected = false;
                     break;
+                default:
+                    System.out.println("Not a valid option");
             }
+        }
+    }
+
+    private static void calculateCurrencyExchange(Scanner scanner) {
+        System.out.println("Please tell me how many dollars");
+        int dollar = scanner.nextInt();
+        int sum = dollar * 12925;
+        System.out.println(sum + " so'm");
+
+    }
+
+    private static void convertSeconds(Scanner scanner) {
+        int seconds = scanner.nextInt();
+
+        int hours = seconds / 3600;
+
+        int minutes = (seconds % 3600) / 60;
+
+        int remainingSeconds = seconds % 60;
+
+        System.out.println("Hours: " + hours + ", Minutes: " + minutes + ", Seconds: " + remainingSeconds);
+    }
+
+    private static void findCentury(Scanner scanner) {
+        System.out.println("Enter the yil ");
+        int yil = scanner.nextInt();
+        int avg = (yil - 1) / 100 + 1;
+        System.out.println("Century release : " + avg);
+    }
+
+    private static void transformNumber(Scanner scanner) {
+        int number = getUserInput(scanner);
+        if (checkDigit(number)) {
+            int hundreds = number / 100;
+            int tens = (number % 100) / 10;
+            int ones = number % 10;
+            int avg = (tens * 100) + (hundreds * 10) + ones;
+            System.out.println(avg);
         }
     }
 
